@@ -1,0 +1,112 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark pe-3 ps-3">
+    <!-- logo, ensure the height is always more than height of navbar buttons (through margin or otherwise), otherwise navbar will have janky collapse transition.  -->
+    <a href="#" class="navbar-brand mt-1 mb-1">SciHub<i>Search</i></a>
+
+    <!-- expand button (for when navbar is too narrow to fit all conztent) -->
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- collapses content when navbar is too narrow -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <!-- buttons (margins & padding eliminated to minimise the height as much as possible to prevent janky collapse transition) -->
+        <div class="navbar-nav mx-auto py-0 my-0">
+            <div class="d-flex flex-row mx-auto gap-4">
+                <a id="navHome" class="nav-link d-flex flex-column align-items-center py-0 my-0" href="index.html">
+                    <i class="bi-house"></i>
+                    <span class="small">Home</span>
+                </a>
+                
+                <a id="navSearch" class="nav-link d-flex flex-column align-items-center py-0 my-0" href="search.html">
+                    <i class="bi-search"></i>
+                    <span class="small">Search</span>
+                </a>
+                
+                <a id="navContact" class="nav-link d-flex flex-column align-items-center py-0 my-0" href="contact.html">
+                    <i class="bi-telephone"></i>
+                    <span class="small">Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- login + signup buttons, with dflex row to center them -->
+        <div class="navbar-nav action-buttons">
+            <div class="d-flex flex-row mx-auto gap-3">
+                <!-- login button -->
+                <div class="nav-item dropdown">
+                    
+                    <!-- login button dropdown prompt -->
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" data-bs-target="navbar-login">Login</a>
+
+                    <!-- login dropdown content -->
+                    <div id="navbar-login" class="dropdown-menu dropdown-menu-dark dropdown-menu-end" style="width: 300px">
+                        <!-- insert some php or something for the login info -->
+                        <form class="mx-4 my-1">
+                            <div class="form-group my-2">
+                                <label for="loginEmail">Email</label>
+                                <input id="loginEmail" type="text" class="form-control" placeholder="email@domain.com" required="required">
+                            </div>
+
+                            <div class="form-group my-2">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" placeholder="Password" required="required">
+                            </div>
+
+                            <div class="form-group my-2">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                    Remember me
+                                    </label>
+                                </div>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary btn-block mb-2" value="Sign In">
+
+                            <div class="dropdown-divider"></div>
+
+                            <a class="dropdown-item text-center" href="#">Forgot Your Password?</a>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- signup button -->
+                <div class="nav-item dropdown">
+                    
+                    <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle btn btn-primary sign-up-btn" data-bs-target="navbar-signup">Sign Up</a>
+
+                    <div id="navbar-signup" class="dropdown-menu dropdown-menu-dark dropdown-menu-end" style="width: 300px">
+                        <!-- insert some php or something for the signup info -->
+                        <form class="mx-4 my-1">
+                            <span class="navbar-text">Fill in this form to create your account!</span>
+
+                            <div class="dropdown-divider"></div>
+
+                            <div class="form-group my-2">
+                                <label for="loginEmail">Email</label>
+                                <input type="text" class="form-control" placeholder="email@domain.com" required="required">
+                            </div>
+
+                            <div class="form-group my-2">
+                                <label for="loginEmail">Password</label>
+                                <input type="password" class="form-control" placeholder="Password" required="required">
+                            </div>
+
+                            <div class="form-group my-2">
+                                <label for="loginEmail">Confirm Password</label>
+                                <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+                            </div>
+
+                            <div class="form-group my-2">
+                                <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary btn-block mb-2" value="Sign Up">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

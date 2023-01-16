@@ -1,0 +1,8 @@
+/* for the search result cards to trim the abstract length */
+.line-clamp {
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

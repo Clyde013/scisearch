@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS6131</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Navigation bar using JQuery hack so I don't have to copy paste navbar html on every page -->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("navbar.html", function(){
+            $("#navSearch").addClass("active"); // Highlights the home tab
+          });
+        });
+    </script>
+
+    <!-- JQuery to truncate/untruncate the abstract -->
+    <script>
+        $(document).ready(function() {
+            $('.line-clamp').click(function() {
+                $(this).toggleClass('line-clamp');
+            });
+        });
+    </script>
+
+    <!-- Use flexbox to center items at center of page -->
+    <div class="h-100 d-flex justify-content-center" style="min-height: 100vh;">
+        <!-- Actual content -->
+        <div class="container py-3">
+            <div class="row">
+                <div class="input-group mb-3">
+                    <!-- Dropdown for type of search -->
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option value="1">Title</option>
+                        <option value="2">Author(s)</option>
+                        <option selected value="3">DOI</option>
+                    </select>
+
+                    <!-- Search bar -->
+                    <input type="text" class="form-control w-50" placeholder="Search">
+                  
+                    <!-- Search button -->
+                    <button class="btn btn-outline-secondary" type="button"><i class="bi-search"></i></button>
+                </div>
+            </div>
+
+            <div class="row">
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                              <a href="#" class="card-link">DOI (link to PDF)</a>
+                              <h5 class="card-title pt-3">Title</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Authors</h6>
+                              <p class="card-text">Abstract (click to read more)...</p>
+                              <p class="card-text"><small class="text-muted">Downloaded on <b>(date)</b></small></p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                              <a href="https://sci-hub.se/https://doi.org/10.1016/j.neunet.2014.09.003" class="card-link">10.1016/j.neunet.2014.09.003</a>
+                              <h5 class="card-title pt-3">Deep learning in neural networks: An overview</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Schmidhuber, J.</h6>
+                              <p id="abstract" class="card-text line-clamp">In recent years, deep artificial neural networks (including recurrent ones) have won numerous contests in pattern recognition and machine learning. This historical survey compactly summarises relevant work, much of it from the previous millennium. Shallow and deep learners are distinguished by the depth of their credit assignment paths, which are chains of possibly learnable, causal links between actions and effects. I review deep supervised learning (also recapitulating the history of backpropagation), unsupervised learning, reinforcement learning & evolutionary computation, and indirect search for short programs encoding deep and large networks.</p>
+                              <p class="card-text"><small class="text-muted">Downloaded on <b>2019-01-24</b></small></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                              <a href="https://sci-hub.se/10.1038/nature14539" class="card-link">10.1038/nature14539 </a>
+                              <h5 class="card-title pt-3">Deep learning</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">LeCun, Y., Bengio, Y., &amp Hinton, G.</h6>
+                              <p id="abstract" class="card-text line-clamp">Deep learning allows computational models that are composed of multiple processing layers to learn representations of 
+                                data with multiple levels of abstraction. These methods have dramatically improved the state-of-the-art in speech recognition, visual object recognition, object detection and many other domains such as drug discovery and genomics. Deep 
+                                learning discovers intricate structure in large data sets by using the backpropagation algorithm to indicate how a machine 
+                                should change its internal parameters that are used to compute the representation in each layer from the representation in 
+                                the previous layer. Deep convolutional nets have brought about breakthroughs in processing images, video, speech and 
+                                audio, whereas recurrent nets have shone light on sequential data such as text and speech.</p>
+                              <p class="card-text"><small class="text-muted">Downloaded on <b>2019-01-08</b></small></p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>          
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

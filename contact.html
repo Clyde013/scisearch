@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS6131</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Navigation bar using JQuery hack so I don't have to copy paste navbar html on every page -->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("navbar.html", function(){
+            $("#navContact").addClass("active"); // Highlights the home tab
+          });
+        });
+    </script>
+
+    <!-- Use flexbox to center items at center of page -->
+    <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <!-- Actual content -->
+        <div class="container py-3">
+            <div class="row text-center mb-3">
+                <h1>Contact Us</h1>
+                <p>Got feedback? Like to see something added? Send a message!</p>
+            </div>
+
+            <div class="row">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi-person"></i></span>
+                    <input type="text" class="form-control" placeholder="Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi-envelope"></i></span>
+                    <input type="text" class="form-control" placeholder="Email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group mb-3">
+                    <textarea class="form-control" placeholder="Your Message" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="d-grid col-7">
+                    <button type="button" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
